@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPTPATH="$(which "$0")"
+SCRIPTPATH="$(command -v "$0")"
 DQAROOT=$(dirname "$(dirname "$SCRIPTPATH")")
 
 cat <<EOF
