@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-SCRIPTPATH=$(which $0)
-DQAROOT=$(dirname $(dirname $SCRIPTPATH))
+SCRIPTPATH="$(command -v "$0")"
+DQAROOT=$(dirname "$(dirname "$SCRIPTPATH")")
 
 cat <<EOF
 
@@ -34,7 +34,7 @@ export TESTING_DISPLAYQA_DIR=\$DQAROOT
 EOF
 
 echo "Writing $DQAROOT/setups.sh"
-echo "$SETUPSSH" > $DQAROOT/setups.sh
+echo "$SETUPSSH" > "${DQAROOT}/setups.sh"
 
 
 
@@ -55,6 +55,4 @@ setenv TESTING_DISPLAYQA_DIR \$DQAROOT
 EOF
 
 echo "Writing $DQAROOT/setups.csh"
-echo "$SETUPSCSH" > $DQAROOT/setups.csh
-
-
+echo "$SETUPSCSH" > "${DQAROOT}/setups.csh"
